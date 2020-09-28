@@ -1,3 +1,11 @@
-const awesomeFunction = () => 'I am just an Awesome Function'
+// Generate configuration from instantiated templates
+const confGenerator = async () => {
+  try {
+    const stringToReturn = 'Sample string'
+    return stringToReturn
+  } catch (err) {
+    throw err
+  }
+}
 
-module.exports = awesomeFunction
+module.exports = confGenerator

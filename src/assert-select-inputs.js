@@ -1,34 +1,54 @@
+const evaluateBusinessRule = require('./evaluate-business-rule')
+
 // Ensure there are no select inputs in an invalid state
-const assertSelectInputs = ({ templateInputs, templateInputsDb }) => {
+const assertSelectInputs = async ({
+  templateInputs,
+  templateInputsDb,
+  context
+}) => {
   for (const templateInput of templateInputs) {
+    const inputOptions = extractInputOptionsByInputId({
+      inputId: templateInput.inputId,
+      templateInputsDb
+    })
     if (
       isInputTypeSelect({ inputId: templateInput.inputId, templateInputsDb })
     ) {
       if (
-        !isInputValueValid({
+        !(await isInputOptionSelectable({
+          inputId: templateInput.inputId,
           inputValue: templateInput.inputValue,
-          inputOptions: extractInputOptionsByInputId({
-            inputId: templateInput.inputId,
-            templateInputsDb
-          })
-        })
+          inputOptions,
+          context
+        }))
       ) {
         throw new Error(
-          `The select input "${templateInput.inputId}" is set to value that does not exist.`
+          `The select input "${templateInput.inputId}" is set to a disabled value.`
         )
       }
     }
   }
 }
 
-// Check if an inputValue is valid
-const isInputValueValid = ({ inputValue, inputOptions }) => {
+// Check if an inputValue is selectable
+const isInputOptionSelectable = async ({
+  inputId,
+  inputValue,
+  inputOptions,
+  context
+}) => {
   for (const inputOption of inputOptions) {
     if (inputValue === inputOption.label) {
-      return true
+      if (inputOption.businessRule === '') return true
+      return await evaluateBusinessRule({
+        businessRule: inputOption.businessRule,
+        context
+      })
     }
   }
-  return false
+  throw new Error(
+    `The select input "${inputId}" is set to value that does not exist.`
+  )
 }
 
 // Check if an input is of type select

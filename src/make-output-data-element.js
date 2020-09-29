@@ -35,9 +35,10 @@ const makeOutputDataElement = async ({
   })
 
   // Assert that the select inputs are in a valid state
-  assertSelectInputs({
+  await assertSelectInputs({
     templateInputs: inputDataElement.templateInputs,
-    templateInputsDb: templateDb.templateInputs
+    templateInputsDb: templateDb.templateInputs,
+    context
   })
 
   // Define the output data element

@@ -10,12 +10,14 @@ const inputData05 = require('./input-data-05.json')
 const inputData06 = require('./input-data-06.json')
 const inputData07 = require('./input-data-07.json')
 const inputData08 = require('./input-data-08.json')
+const inputData09 = require('./input-data-09.json')
 const templatesDb01 = require('./templates-db-01.json')
 const templatesDb02 = require('./templates-db-02.json')
 const templatesDb03 = require('./templates-db-03.json')
 const templatesDb04 = require('./templates-db-04.json')
 const templatesDb05 = require('./templates-db-05.json')
 const templatesDb06 = require('./templates-db-06.json')
+const templatesDb07 = require('./templates-db-07.json')
 
 describe('Config generation test suite.', () => {
   it('should generate a Cisco interface', async () => {
@@ -94,6 +96,18 @@ describe('Config generation test suite.', () => {
     )
   })
 
+  it('should generate a Cisco interface as the input option is selectable', async () => {
+    const outputData = await confGenerator({
+      inputData: inputData01,
+      templatesDb: templatesDb07
+    })
+    assert(
+      outputData[0].configuration ===
+        'interface GigabitEthernet0/0/0\n ip address 10.10.10.2 255.255.255.252\n no shutdown\n exit\n!',
+      'Error, the config does not match'
+    )
+  })
+
   it('should error due to a rogue input', async () => {
     try {
       await confGenerator({
@@ -158,7 +172,7 @@ describe('Config generation test suite.', () => {
     }
   })
 
-  it('should error as a select input is set to an input option that does not exist ', async () => {
+  it('should error as a select input is set to an input option that does not exist', async () => {
     try {
       await confGenerator({
         inputData: inputData08,
@@ -169,6 +183,22 @@ describe('Config generation test suite.', () => {
       assert(
         err.message ===
           'The select input "PHYSICAL_INTERFACE" is set to value that does not exist.',
+        'Error, error message does not match'
+      )
+    }
+  })
+
+  it('should error as a select input is set to an input option that is disabled', async () => {
+    try {
+      await confGenerator({
+        inputData: inputData09,
+        templatesDb: templatesDb07
+      })
+      assert(true === false, 'Error, an error should have already been thrown')
+    } catch (err) {
+      assert(
+        err.message ===
+          'The select input "PHYSICAL_INTERFACE" is set to a disabled value.',
         'Error, error message does not match'
       )
     }

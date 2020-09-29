@@ -3,7 +3,7 @@
     "id": "5b794b468b48020c3135703c",
     "templateDisplayName": "Ethernet Uplink - Simple",
     "templateDescription": "Ethernet Uplink template for the Cisco C1117-4P",
-    "businessRule": "",
+    "businessRule": "PHYSICAL_INTERFACE != 'GigabitEthernet0/0/0'",
     "templateVersion": 3,
     "templateUpdatedBy": "Demo Account",
     "dateModified": 1601324697559,
@@ -60,6 +60,6 @@
         "inputGlobal": false
       }
     ],
-    "templateMarkup": "interface {{INTERFACE_NAME}}\n ip address {{IP_ADDRESS}} {{SUBNET_MASK}}\n no shutdown\n exit\n!"
+    "templateMarkup": "interface {{PHYSICAL_INTERFACE}}\n ip address {{IP_ADDRESS}} {{SUBNET_MASK}}\n no shutdown\n exit\n!"
   }
 ]

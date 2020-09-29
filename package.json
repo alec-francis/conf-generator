@@ -17,7 +17,9 @@
     "url": "https://github.com/alec-francis/conf-generator/issues"
   },
   "homepage": "https://github.com/alec-francis/conf-generator#readme",
-  "dependencies": {},
+  "dependencies": {
+    "nunjucks": "3.2.2"
+  },
   "devDependencies": {
     "chai": "4.2.0",
     "mocha": "8.1.3"

@@ -1,6 +1,6 @@
 # UCG Core
 
-[![Build Status](https://travis-ci.org/alec-francis/conf-generator.svg?branch=master)](https://travis-ci.org/alec-francis/conf-generator)
+[![Build Status](https://travis-ci.org/alec-francis/ucg-core.svg?branch=master)](https://travis-ci.org/alec-francis/ucg-core)
 
 ## Install
 

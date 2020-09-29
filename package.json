@@ -1,5 +1,5 @@
 {
-  "name": "conf-generator",
+  "name": "ucg-core",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alec-francis/conf-generator.git"
+    "url": "git+https://github.com/alec-francis/ucg-core.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alec-francis/conf-generator/issues"
+    "url": "https://github.com/alec-francis/ucg-core/issues"
   },
-  "homepage": "https://github.com/alec-francis/conf-generator#readme",
+  "homepage": "https://github.com/alec-francis/ucg-core#readme",
   "dependencies": {
     "nunjucks": "3.2.2"
   },

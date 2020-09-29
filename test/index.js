@@ -1,5 +1,5 @@
 const { assert } = require('chai')
-const confGenerator = require('../src')
+const confGenerator = require('../src/conf-generator')
 
 // Import test data
 const inputData01 = require('./input-data-01.json')

@@ -182,7 +182,7 @@ describe('Config generation test suite.', () => {
     } catch (err) {
       assert(
         err.message ===
-          'The select input "PHYSICAL_INTERFACE" is set to value that does not exist.',
+          'The select input "PHYSICAL_INTERFACE" is set to a value that does not exist.',
         'Error, error message does not match'
       )
     }

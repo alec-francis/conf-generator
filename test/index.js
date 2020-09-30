@@ -203,4 +203,20 @@ describe('Config generation test suite.', () => {
       )
     }
   })
+
+  it('should error as a template ID does not exist in the templatesDb array', async () => {
+    try {
+      await confGenerator({
+        inputData: inputData01,
+        templatesDb: []
+      })
+      assert(true === false, 'Error, an error should have already been thrown')
+    } catch (err) {
+      assert(
+        err.message ===
+          'No matching template ID was found for "5b794b468b48020c3135703c".',
+        'Error, error message does not match'
+      )
+    }
+  })
 })

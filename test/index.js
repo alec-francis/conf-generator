@@ -1,7 +1,7 @@
 const { assert } = require('chai')
 const confGenerator = require('../lib/conf-generator')
 
-// Import test data
+// Import test data - inputs
 const inputData01 = require('./input-data-01.json')
 const inputData02 = require('./input-data-02.json')
 const inputData03 = require('./input-data-03.json')
@@ -11,6 +11,9 @@ const inputData06 = require('./input-data-06.json')
 const inputData07 = require('./input-data-07.json')
 const inputData08 = require('./input-data-08.json')
 const inputData09 = require('./input-data-09.json')
+const inputData10 = require('./input-data-10.json')
+
+// Import test data - templates
 const templatesDb01 = require('./templates-db-01.json')
 const templatesDb02 = require('./templates-db-02.json')
 const templatesDb03 = require('./templates-db-03.json')
@@ -18,6 +21,7 @@ const templatesDb04 = require('./templates-db-04.json')
 const templatesDb05 = require('./templates-db-05.json')
 const templatesDb06 = require('./templates-db-06.json')
 const templatesDb07 = require('./templates-db-07.json')
+const templatesDb08 = require('./templates-db-08.json')
 
 describe('Config generation test suite.', () => {
   it('should generate a Cisco interface', async () => {
@@ -79,10 +83,27 @@ describe('Config generation test suite.', () => {
     )
   })
 
-  it('should generate two Cisco interfaces', async () => {
+  it('should generate two Cisco interfaces using the same template', async () => {
     const outputData = await confGenerator({
       inputData: inputData07,
       templatesDb: templatesDb01
+    })
+    assert(
+      outputData[0].configuration ===
+        'interface GigabitEthernet0/0/0\n ip address 10.10.10.2 255.255.255.252\n no shutdown\n exit\n!',
+      'Error, the config does not match'
+    )
+    assert(
+      outputData[1].configuration ===
+        'interface GigabitEthernet0/0/1\n ip address 10.10.20.1 255.255.255.0\n no shutdown\n exit\n!',
+      'Error, the config does not match'
+    )
+  })
+
+  it('should generate two Cisco interfaces using different templates', async () => {
+    const outputData = await confGenerator({
+      inputData: inputData10,
+      templatesDb: templatesDb08
     })
     assert(
       outputData[0].configuration ===

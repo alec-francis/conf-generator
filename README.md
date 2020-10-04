@@ -2,6 +2,14 @@
 
 [![Build Status](https://travis-ci.org/alec-francis/ucg-core.svg?branch=master)](https://travis-ci.org/alec-francis/ucg-core)
 
+## Contents
+
+- [Install](#Install)
+- [Usage](#Usage)
+  - [Config Generation](#Config-Generation)
+  - [Jinja2 Syntax Validation](#Jinja2-Syntax-Validation)
+  - [Business Rule Syntax Validation](#Business-Rule-Syntax-Validation)
+
 ## Install
 
 ```
@@ -158,4 +166,66 @@ demo()
     ]
   }
 ]
+```
+
+### Jinja2 Syntax Validation
+
+#### Example
+
+```javascript
+// Require the Jinja2 syntax validator
+const { isJinjaSyntaxValid } = require('ucg-core')
+
+const demo = async () => {
+  try {
+    const { syntaxValid, errorMessage } = await isJinjaSyntaxValid(
+      `ip dhcp pool {{POOL_ NAME}}\n network {{DHCP_NETWORK}}\n default-router {{DEFAULT_ROUTER}}\n dns-server {{DNS_SERVER}}\n exit\n!`
+    )
+    console.log(syntaxValid)
+    console.log(errorMessage)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+// Run the demo
+demo()
+```
+
+#### Example Output
+
+```
+false
+Template render error: [Line 1, Column 22] expected variable end
+```
+
+### Business Rule Syntax Validation
+
+#### Example
+
+```javascript
+// Require the business rule syntax validator
+const { isBusinessRuleSyntaxValid } = require('ucg-core')
+
+const demo = async () => {
+  try {
+    const { syntaxValid, errorMessage } = await isBusinessRuleSyntaxValid(
+      "WAN_TYPE ==== 'VDSL'"
+    )
+    console.log(syntaxValid)
+    console.log(errorMessage)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+// Run the demo
+demo()
+```
+
+#### Example Output
+
+```
+false
+Template render error: [Column 13] unexpected token: =
 ```

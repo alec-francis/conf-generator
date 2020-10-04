@@ -1,0 +1,64 @@
+[
+  {
+    "templateId": "5b794b468b48020c3135703c",
+    "templateInputs": [
+      {
+        "inputId": "PHYSICAL_INTERFACE",
+        "inputVisible": true,
+        "inputOptions": [
+          {
+            "label": "GigabitEthernet0/0/0",
+            "inputOptionEnabled": true
+          },
+          {
+            "label": "GigabitEthernet0/0/1",
+            "inputOptionEnabled": true
+          },
+          {
+            "label": "FastEthernet1",
+            "inputOptionEnabled": false
+          }
+        ]
+      },
+      {
+        "inputId": "IP_ADDRESS",
+        "inputVisible": true
+      },
+      {
+        "inputId": "SUBNET_MASK",
+        "inputVisible": true
+      }
+    ]
+  },
+  {
+    "templateId": "5b794b468b48020c3135703c",
+    "templateInputs": [
+      {
+        "inputId": "PHYSICAL_INTERFACE",
+        "inputVisible": true,
+        "inputOptions": [
+          {
+            "label": "GigabitEthernet0/0/0",
+            "inputOptionEnabled": true
+          },
+          {
+            "label": "GigabitEthernet0/0/1",
+            "inputOptionEnabled": false
+          },
+          {
+            "label": "FastEthernet1",
+            "inputOptionEnabled": true
+          }
+        ]
+      },
+      {
+        "inputId": "IP_ADDRESS",
+        "inputVisible": true
+      },
+      {
+        "inputId": "SUBNET_MASK",
+        "inputVisible": true
+      }
+    ]
+  }
+]

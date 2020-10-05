@@ -12,6 +12,7 @@ const inputData07 = require('./input-data-07.json')
 const inputData08 = require('./input-data-08.json')
 const inputData09 = require('./input-data-09.json')
 const inputData10 = require('./input-data-10.json')
+const inputData11 = require('./input-data-11.json')
 
 // Import test data - templates
 const templatesDb01 = require('./templates-db-01.json')
@@ -32,6 +33,18 @@ describe('Config generation test suite.', () => {
     assert(
       outputData[0].configuration ===
         'interface GigabitEthernet0/0/0\n ip address 10.10.10.2 255.255.255.252\n no shutdown\n exit\n!',
+      'Error, the config does not match'
+    )
+  })
+
+  it('should generate a Cisco interface with blank values', async () => {
+    const outputData = await confGenerator({
+      inputData: inputData11,
+      templatesDb: templatesDb01
+    })
+    assert(
+      outputData[0].configuration ===
+        'interface GigabitEthernet0/0/0\n ip address  \n no shutdown\n exit\n!',
       'Error, the config does not match'
     )
   })

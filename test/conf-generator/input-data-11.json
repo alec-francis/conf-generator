@@ -1,0 +1,19 @@
+[
+  {
+    "templateId": "5b794b468b48020c3135703c",
+    "templateInputs": [
+      {
+        "inputId": "PHYSICAL_INTERFACE",
+        "inputValue": "GigabitEthernet0/0/0"
+      },
+      {
+        "inputId": "IP_ADDRESS",
+        "inputValue": ""
+      },
+      {
+        "inputId": "SUBNET_MASK",
+        "inputValue": ""
+      }
+    ]
+  }
+]

@@ -299,15 +299,15 @@ demo()
         "inputOptions": [
           {
             "label": "GigabitEthernet0/0/0",
-            "inputOptionEnabled": true
+            "isDisabled": false
           },
           {
             "label": "GigabitEthernet0/0/1",
-            "inputOptionEnabled": true
+            "isDisabled": false
           },
           {
             "label": "FastEthernet1",
-            "inputOptionEnabled": false
+            "isDisabled": true
           }
         ]
       },

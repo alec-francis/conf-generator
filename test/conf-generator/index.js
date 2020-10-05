@@ -171,7 +171,7 @@ describe('Config generation test suite.', () => {
     } catch (err) {
       assert(
         err.message ===
-          'The global input "PHYSICAL_INTERFACE" is defined in more than one template.',
+          'The global input "PHYSICAL_INTERFACE" is defined in more than one template: "Global Vars One", "Global Vars Two"',
         'Error, error message does not match'
       )
     }

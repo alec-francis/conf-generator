@@ -219,7 +219,7 @@ describe('Config generation test suite.', () => {
     } catch (err) {
       assert(
         err.message ===
-          'The select input "PHYSICAL_INTERFACE" is set to a disabled value.',
+          'The select input "PHYSICAL_INTERFACE" is set to a disabled value in template "Ethernet Uplink - Simple".',
         'Error, error message does not match'
       )
     }

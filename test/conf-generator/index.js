@@ -13,6 +13,8 @@ const inputData08 = require('./input-data-08.json')
 const inputData09 = require('./input-data-09.json')
 const inputData10 = require('./input-data-10.json')
 const inputData11 = require('./input-data-11.json')
+const inputData12 = require('./input-data-12.json')
+const inputData13 = require('./input-data-13.json')
 
 // Import test data - templates
 const templatesDb01 = require('./templates-db-01.json')
@@ -23,6 +25,7 @@ const templatesDb05 = require('./templates-db-05.json')
 const templatesDb06 = require('./templates-db-06.json')
 const templatesDb07 = require('./templates-db-07.json')
 const templatesDb08 = require('./templates-db-08.json')
+const templatesDb09 = require('./templates-db-09.json')
 
 describe('Config generation test suite.', () => {
   it('should generate a Cisco interface', async () => {
@@ -252,5 +255,45 @@ describe('Config generation test suite.', () => {
         'Error, error message does not match'
       )
     }
+  })
+
+  it('should error as a read-only input was given an unexpected value', async () => {
+    try {
+      await confGenerator({
+        inputData: inputData01,
+        templatesDb: templatesDb09
+      })
+      assert(true === false, 'Error, an error should have already been thrown')
+    } catch (err) {
+      assert(
+        err.message ===
+          'The input "IP_ADDRESS" is read-only but was modified in "Ethernet Uplink - Simple".',
+        'Error, error message does not match'
+      )
+    }
+  })
+
+  it('should succeed as a read-only input was not given an input value', async () => {
+    const outputData = await confGenerator({
+      inputData: inputData12,
+      templatesDb: templatesDb09
+    })
+    assert(
+      outputData[0].configuration ===
+        'interface GigabitEthernet0/0/0\n ip address 10.0.0.2 255.255.255.252\n no shutdown\n exit\n!',
+      'Error, the config does not match'
+    )
+  })
+
+  it('should succeed as a read-only input was provided the default value', async () => {
+    const outputData = await confGenerator({
+      inputData: inputData13,
+      templatesDb: templatesDb09
+    })
+    assert(
+      outputData[0].configuration ===
+        'interface GigabitEthernet0/0/0\n ip address 10.0.0.2 255.255.255.252\n no shutdown\n exit\n!',
+      'Error, the config does not match'
+    )
   })
 })

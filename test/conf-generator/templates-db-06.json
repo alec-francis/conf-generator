@@ -16,7 +16,7 @@
         "inputPriority": 1,
         "inputDescription": "",
         "businessRule": "",
-        "inputType": "select",
+        "inputFormType": "select",
         "inputDefaultValue": "GigabitEthernet0/0/0",
         "inputOptions": [
           { "label": "GigabitEthernet0/0/0", "businessRule": "" },
@@ -33,7 +33,7 @@
         "inputPriority": 2,
         "inputDescription": "",
         "businessRule": "",
-        "inputType": "text",
+        "inputFormType": "text",
         "inputDefaultValue": "10.0.0.2",
         "inputReadOnly": false,
         "inputGlobal": true
@@ -45,7 +45,7 @@
         "inputPriority": 3,
         "inputDescription": "",
         "businessRule": "",
-        "inputType": "text",
+        "inputFormType": "text",
         "inputDefaultValue": "255.255.255.252",
         "inputReadOnly": false,
         "inputGlobal": true
@@ -70,7 +70,7 @@
         "inputPriority": 1,
         "inputDescription": "",
         "businessRule": "",
-        "inputType": "select",
+        "inputFormType": "select",
         "inputDefaultValue": "GigabitEthernet0/0/0",
         "inputOptions": [
           { "label": "GigabitEthernet0/0/0", "businessRule": "" },
@@ -87,7 +87,7 @@
         "inputPriority": 2,
         "inputDescription": "",
         "businessRule": "",
-        "inputType": "text",
+        "inputFormType": "text",
         "inputDefaultValue": "10.0.0.2",
         "inputReadOnly": false,
         "inputGlobal": true
@@ -99,7 +99,7 @@
         "inputPriority": 3,
         "inputDescription": "",
         "businessRule": "",
-        "inputType": "text",
+        "inputFormType": "text",
         "inputDefaultValue": "255.255.255.252",
         "inputReadOnly": false,
         "inputGlobal": true

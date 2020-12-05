@@ -69,7 +69,7 @@ const demo = async () => {
             inputPriority: 1,
             inputDescription: 'Name of the physical interface',
             businessRule: '',
-            inputType: 'select',
+            inputFormType: 'select',
             inputDefaultValue: 'GigabitEthernet0/0/0',
             inputOptions: [
               {
@@ -95,7 +95,7 @@ const demo = async () => {
             inputPriority: 3,
             inputDescription: 'IP Address of the Interface',
             businessRule: '',
-            inputType: 'text',
+            inputFormType: 'text',
             inputDefaultValue: '10.0.0.2',
             inputReadOnly: false,
             inputGlobal: false
@@ -108,7 +108,7 @@ const demo = async () => {
             inputDescription:
               'Subnet mask of the Interface, Eg: 255.255.255.252',
             businessRule: '',
-            inputType: 'text',
+            inputFormType: 'text',
             inputDefaultValue: '255.255.255.252',
             inputReadOnly: false,
             inputGlobal: false
@@ -219,7 +219,7 @@ const demo = async () => {
             inputPriority: 1,
             inputDescription: 'Name of the physical interface',
             businessRule: '',
-            inputType: 'select',
+            inputFormType: 'select',
             inputDefaultValue: 'GigabitEthernet0/0/0',
             inputOptions: [
               {
@@ -245,7 +245,7 @@ const demo = async () => {
             inputPriority: 3,
             inputDescription: 'IP Address of the Interface',
             businessRule: '',
-            inputType: 'text',
+            inputFormType: 'text',
             inputDefaultValue: '10.0.0.2',
             inputReadOnly: false,
             inputGlobal: false
@@ -258,7 +258,7 @@ const demo = async () => {
             inputDescription:
               'Subnet mask of the Interface, Eg: 255.255.255.252',
             businessRule: '',
-            inputType: 'text',
+            inputFormType: 'text',
             inputDefaultValue: '255.255.255.252',
             inputReadOnly: false,
             inputGlobal: false

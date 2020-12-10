@@ -1,0 +1,28 @@
+[
+  {
+    "id": "5b794b468b48020c3135703c",
+    "templateDisplayName": "Ethernet Uplink - Simple",
+    "templateDescription": "Ethernet Uplink template for the Cisco C1117-4P",
+    "businessRule": "",
+    "templateVersion": 3,
+    "templateUpdatedBy": "Demo Account",
+    "dateModified": 1601324697559,
+    "dateCreated": 1601324602017,
+    "templateInputs": [
+      {
+        "inputId": "INTERFACE_DETAILS_ARRAY",
+        "inputPrimaryKey": "NXdrkbc7nwiV0mfG8WOq",
+        "inputDisplayName": "Interface Details",
+        "inputPriority": 3,
+        "inputDescription": "Details of the interfaces",
+        "businessRule": "",
+        "inputDataType": "json",
+        "inputFormType": "text",
+        "inputDefaultValue": "[]",
+        "inputReadOnly": false,
+        "inputGlobal": false
+      }
+    ],
+    "templateMarkup": "{% for interfaceDetails in INTERFACE_DETAILS_ARRAY %}\ninterface {{interfaceDetails.interfaceName}}\n ip address {{interfaceDetails.ipAddress}} {{interfaceDetails.subnetMask}}\n no shutdown\n exit\n!{% endfor %}"
+  }
+]

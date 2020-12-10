@@ -10,27 +10,27 @@
     "dateCreated": 1601324602017,
     "templateInputs": [
       {
-        "inputId": "PHYSICAL_INTERFACE",
+        "inputId": "INTERFACE_INDEX",
         "inputPrimaryKey": "opBY9pb9XRzmnpT3IvYo",
-        "inputDisplayName": "Physical Interface",
+        "inputDisplayName": "Interface index",
         "inputPriority": 1,
-        "inputDescription": "Name of the physical interface",
+        "inputDescription": "Index of the physical interface",
         "businessRule": "",
-        "inputDataType": "string",
+        "inputDataType": "json",
         "inputFormType": "select",
-        "inputDefaultValue": "GigabitEthernet0/0/0",
+        "inputDefaultValue": "0",
         "inputOptions": [
           {
-            "label": "GigabitEthernet0/0/0",
+            "label": "0",
             "businessRule": ""
           },
           {
-            "label": "GigabitEthernet0/0/1",
+            "label": "1",
             "businessRule": ""
           },
           {
-            "label": "FastEthernet1",
-            "businessRule": "ROUTER == 'legacy'"
+            "label": "2",
+            "businessRule": ""
           }
         ],
         "inputReadOnly": false,
@@ -63,6 +63,6 @@
         "inputGlobal": false
       }
     ],
-    "templateMarkup": "interface {{LEMONADE}} {{PHYSICAL_INTERFACE}}\n ip address {{IP_ADDRESS}} {{SUBNET_MASK}}\n no shutdown\n exit\n!"
+    "templateMarkup": "interface GigabitEthernet{{INTERFACE_INDEX}}\n ip address {{IP_ADDRESS}} {{SUBNET_MASK}}\n no shutdown\n exit\n!"
   }
 ]

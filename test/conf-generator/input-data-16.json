@@ -1,0 +1,19 @@
+[
+  {
+    "templateId": "5b794b468b48020c3135703c",
+    "templateInputs": [
+      {
+        "inputId": "INTERFACE_INDEX",
+        "inputValue": 2
+      },
+      {
+        "inputId": "IP_ADDRESS",
+        "inputValue": "10.10.10.2"
+      },
+      {
+        "inputId": "SUBNET_MASK",
+        "inputValue": "255.255.255.252"
+      }
+    ]
+  }
+]

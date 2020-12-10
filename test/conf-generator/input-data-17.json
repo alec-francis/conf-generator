@@ -1,0 +1,27 @@
+[
+  {
+    "templateId": "5b794b468b48020c3135703c",
+    "templateInputs": [
+      {
+        "inputId": "INTERFACE_DETAILS_ARRAY",
+        "inputValue": [
+          {
+            "interfaceName": "GigabitEthernet1",
+            "ipAddress": "10.0.1.1",
+            "subnetMask": "255.255.255.0"
+          },
+          {
+            "interfaceName": "GigabitEthernet2",
+            "ipAddress": "10.0.2.1",
+            "subnetMask": "255.255.255.0"
+          },
+          {
+            "interfaceName": "GigabitEthernet3",
+            "ipAddress": "10.0.3.1",
+            "subnetMask": "255.255.255.0"
+          }
+        ]
+      }
+    ]
+  }
+]

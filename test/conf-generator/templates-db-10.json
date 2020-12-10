@@ -45,7 +45,7 @@
         "businessRule": "",
         "inputDataType": "string",
         "inputFormType": "text",
-        "inputDefaultValue": "10.0.0.2",
+        "inputDefaultValue": "10.0.0.1",
         "inputReadOnly": false,
         "inputGlobal": false
       },
@@ -63,6 +63,6 @@
         "inputGlobal": false
       }
     ],
-    "templateMarkup": "interface {{LEMONADE}} {{PHYSICAL_INTERFACE}}\n ip address {{IP_ADDRESS}} {{SUBNET_MASK}}\n no shutdown\n exit\n!"
+    "templateMarkup": "interface {{PHYSICAL_INTERFACE}}\n ip address {{IP_ADDRESS}} {{SUBNET_MASK}}\n no shutdown\n exit\n!"
   }
 ]
